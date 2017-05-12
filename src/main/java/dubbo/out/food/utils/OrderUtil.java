@@ -6,7 +6,8 @@ import java.util.Random;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.xianguo.platform.common.Constants;
+import dubbo.out.food.common.Constants;
+
 /**
  * @author Èôà‰Ω≥
  * @createTime 2017Âπ?1Êú?23Êó? ‰∏äÂçà9:31:07
@@ -18,21 +19,21 @@ public class OrderUtil {
 	 * @param userId
 	 * @return
 	 */
-	public static String generateOrderNum(String userId) {
-		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
-		String orderNum;
-		if (!StringUtils.isEmpty(userId)) {
-			int len = 8 - String.valueOf(userId).length();
-			for (int i = 0; i < len; i++) {// Ë°?0
-				userId = "0" + userId;
-			}
-			orderNum = userId + df.format(new Date());
-		} else {
-			orderNum = "99999999" + df.format(new Date());
-		}
-		int x = new Random().nextInt(90000) + 10000;
-		orderNum = Constants.ORDER_PREFIX + orderNum + x;
-		return orderNum;
-	}
+//	public static String generateOrderNum(String userId) {
+//		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+//		String orderNum;
+//		if (!StringUtils.isEmpty(userId)) {
+//			int len = 8 - String.valueOf(userId).length();
+//			for (int i = 0; i < len; i++) {// Ë°?0
+//				userId = "0" + userId;
+//			}
+//			orderNum = userId + df.format(new Date());
+//		} else {
+//			orderNum = "99999999" + df.format(new Date());
+//		}
+//		int x = new Random().nextInt(90000) + 10000;
+//		orderNum = Constants.ORDER_PREFIX + orderNum + x;
+//		return orderNum;
+//	}
 
 }

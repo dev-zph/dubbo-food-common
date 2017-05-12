@@ -1,8 +1,4 @@
 package dubbo.out.food.utils;
-/**
- * @版权�?�? 城云科技（杭州）有限公司
- * 
- */dubbo.out.food.utilout.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
