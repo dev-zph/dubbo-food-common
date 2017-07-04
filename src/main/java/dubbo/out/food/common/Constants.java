@@ -1,47 +1,34 @@
 package dubbo.out.food.common;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import dubbo.out.food.utils.ConfigurableConstants;
 
+public class Constants extends ConfigurableConstants {
 
-public class Constants extends ConfigurableConstants{
 	static {
 		// init("ftp.properties");
-		init("food.properties"); 
+		init("common.properties");
 	}
-	
-	public static final String PAY_ALIPAY_PID = getValue("food_test_value");
-	
-	public static final Map<String, String> test_valueMap = new HashMap<String, String>();
-	static {
-		test_valueMap.put("1", "娴嬭瘯绉嶇被");
-		test_valueMap.put("2", "娴嬭瘯绉嶇被浜?");
-	}
-	
-	public static enum ABCPayType {
-		// 1 鏈垱寤? 2宸插垱寤哄鍑轰换鍔＄郴缁熸鍦ㄦ墽琛屽鍑簀ob 3宸叉墽琛屽畬鎴愬苟鐢熸垚浜嗘姤琛?4鎵ц澶辫触
-		ABCPAY_STATUS_IMM(0, "ImmediatePay"), ABCPAY_STATUS_DIV(1, "DividedPay");
-		private String name;
-		private int code;
 
-		ABCPayType(int code, String name) {
-			this.code = code;
-			this.name = name;
-		}
 
-		public static String getName(int code) {
-			for (ABCPayType reportStatus : ABCPayType.values()) {
-				if (reportStatus.getCode() == code) {
-					return reportStatus.name;
-				}
-			}
-			return getName(9);
-		}
+	// 订单数量取小数位数
+	public static final int ITEM_COUNT_SCAL = 2;
+	// 定金折算率
+	public static final String EARNEST_MONEY = getValue("EARNEST_MONEY");
 
-		public int getCode() {
-			return code;
-		}
-	}
+	// 定金上限
+	public static final String LIMT_UP_MONEY = getValue("LIMT_UP_MONEY");
+
+	// 定金下限
+	public static final String LIMT_LOW_MONEY = getValue("LIMT_LOW_MONEY");
+
+	// 是否订金
+	public static final String IS_EARNEST_MONEY = getValue("IS_EARNEST_MONEY");
+
+	// 普通会员价
+	public static final String MEMBER_MONEY = getValue("MEMBER_MONEY");
+	
+	public final static String DATE_STATUS_ZEOR = "0";
+	// 订单号前缀
+	public static final String ORDER_PREFIX = "PO";
+
 }
